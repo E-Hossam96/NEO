@@ -37,8 +37,7 @@ def load_neos(neo_csv_path):
             obj[1] = True if obj[1] == 'Y' else False
             neos.append(obj)
 
-    # indices of needed data are:
-    # 3: pdes, 4: name, 7: pha, 15: diameter
+    # indices of needed data are: 3: pdes, 4: name, 7: pha, 15: diameter
     return [NearEarthObject(*obj) for obj in neos]
 
 
@@ -54,8 +53,7 @@ def load_approaches(cad_json_path):
 
     cad = cad['data']
 
-    # indices of needed data are:
-    # 0: pdes, 3: cd, 4: dist, 7: v_rel
+    # indices of needed data are: 0: pdes, 3: cd, 4: dist, 7: v_rel
     cad = [[obj[0], obj[3], float(obj[4]), float(obj[7])] for obj in cad]
 
     return [CloseApproach(*obj) for obj in cad]

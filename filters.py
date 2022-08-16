@@ -75,54 +75,47 @@ class AttributeFilter:
 
 
 class DateFilter(AttributeFilter):
-    """A customr AttributeFilter subclass to filter dates only."""
+    """A custom AttributeFilter subclass to override the get method to filter approach Dates."""
+
     @classmethod
     def get(cls, approach):
-        """Get the time attribute from a close approach"""
+        """Returns the time attribute of the approach object."""
         return approach.time.date()
 
 
 class DistanceFilter(AttributeFilter):
-    """
-    A customr AttributeFilter subclass to filter Distance.
-    Operates on Approaches.
-    """
+    """A custom AttributeFilter subclass to override the get method to filter approach Distance."""
+
     @classmethod
     def get(cls, approach):
-        """Get the distance attribute from a close approach."""
+        """Returns the distance attribute of the approach object."""
         return approach.distance
 
 
 class VelocityFilter(AttributeFilter):
-    """
-    A customr AttributeFilter subclass to filter Velocity.
-    Operates on Approaches.
-    """
+    """A custom AttributeFilter subclass to override the get method to filter approach Velocity."""
+
     @classmethod
     def get(cls, approach):
-        """Get the velocity attribute from a close approach."""
+        """Returns the velocity attribute of the approach object."""
         return approach.velocity
 
 
 class DiameterFilter(AttributeFilter):
-    """
-    A customr AttributeFilter subclass to filter Diameter.
-    Operates on Near Earth Objects.
-    """
+    """A custom AttributeFilter subclass to override the get method to filter NEO Diameter."""
+
     @classmethod
     def get(cls, approach):
-        """Get the diameter attribute from a Near Earth Object."""
+        """Returns the `neo.diameter` attribute of the approach object."""
         return approach.neo.diameter
 
 
 class HazardousFilter(AttributeFilter):
-    """
-    A customr AttributeFilter subclass to filter Hazardousness.
-    Operates on Near Earth Objects.
-    """
+    """A custom AttributeFilter subclass to override the get method to filter NEO Hazardousness."""
+
     @classmethod
     def get(cls, approach):
-        """Get the hazardous attribute from a Near Earth Object."""
+        """Returns the `neo.hazardous` attribute of the approach object."""
         return approach.neo.hazardous
 
 
@@ -163,7 +156,6 @@ def create_filters(
     :return: A collection of filters for use with `query`.
     """
     # Decide how you will represent your filters.
-
     filters = ()
 
     # hard code
@@ -201,7 +193,6 @@ def limit(iterator, n=None):
     :yield: The first (at most) `n` values from the iterator.
     """
     # Produce at most `n` values from the given iterator.
-
     if not n in (None, 0):
         return itertools.islice(iterator, n)
 

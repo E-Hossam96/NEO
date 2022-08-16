@@ -48,8 +48,6 @@ class NEODatabase:
 
         # What additional auxiliary data structures will be useful?
 
-        # heavily inspired by https://github.com/stanleydukor/Near-Earth-Objects/blob/master/database.py
-
         self._des_to_idx = {}
 
         for idx, neo in enumerate(self._neos):
@@ -58,23 +56,12 @@ class NEODatabase:
 
         # Link together the NEOs and their close approaches.
 
-        # def finNEO(approach, neos):
-        #     for neo in neos:
-        #         if approach._designation == neo.designation: return neo
-        #     return None
-
         for approach in self._approaches:
             assert approach.neo == None
             if approach._designation in self._des_to_idx:
                 approach.neo = self._neos[self._des_to_idx[approach._designation]]
                 self._neos[self._des_to_idx[approach._designation]
                            ].approaches.append(approach)
-
-        # for obj in self._neos:
-        #     assert bool(obj.approaches) == False
-        #     obj.approaches.append(filter(
-        #         lambda x: x._designation == obj.designation, self._approaches
-        #     ))
 
         self._des_to_neo = {neo.designation: neo for neo in self._neos}
         self._name_to_neo = {neo.name: neo for neo in self._neos}
@@ -93,10 +80,6 @@ class NEODatabase:
         :return: The `NearEarthObject` with the desired primary designation, or `None`.
         """
         # Fetch an NEO by its primary designation.
-
-        # for neo in self._neos:
-        #     if neo.designation == designation: return neo
-
         return self._des_to_neo.get(designation, None)
 
     def get_neo_by_name(self, name):
@@ -114,10 +97,6 @@ class NEODatabase:
         :return: The `NearEarthObject` with the desired name, or `None`.
         """
         # Fetch an NEO by its name.
-
-        # for neo in self._neos:
-        #     if neo.name == name: return neo
-
         return self._name_to_neo.get(name, None)
 
     def query(self, filters=()):
