@@ -23,3 +23,14 @@ git clone https://github.com/udacity/cd0010-advanced-python-techniques-project-s
 
 ```
 * Link to a reference code solutions: [Near-Earth-Objects](https://github.com/stanleydukor/Near-Earth-Objects.git)
+
+## Results
+```
+PS D:\Courses\Intermediate-Python-Nanodegree\NEO> python -m unittest
+.........................................................................
+----------------------------------------------------------------------   
+Ran 73 tests in 5.784s
+
+OK
+PS D:\Courses\Intermediate-Python-Nanodegree\NEO> 
+```
