@@ -51,13 +51,13 @@ class NEODatabase:
         self._des_to_idx = {}
 
         for idx, neo in enumerate(self._neos):
-            assert bool(neo.approaches) == False
+            assert bool(neo.approaches) is False
             self._des_to_idx[neo.designation] = idx
 
         # Link together the NEOs and their close approaches.
 
         for approach in self._approaches:
-            assert approach.neo == None
+            assert approach.neo is None
             if approach._designation in self._des_to_idx:
                 approach.neo = self._neos[self._des_to_idx[approach._designation]]
                 self._neos[self._des_to_idx[approach._designation]

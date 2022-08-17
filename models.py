@@ -43,7 +43,7 @@ class NearEarthObject:
             This is a unique identifier in the database, and its "name" to computer systems.
 
         :param pha:
-            whether NASA has marked the NEO as a "Potentially Hazardous Asteroid," 
+            whether NASA has marked the NEO as a "Potentially Hazardous Asteroid,"
             roughly meaning that it's large and can come quite close to Earth.
 
         :pram name:
