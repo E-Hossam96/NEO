@@ -20,7 +20,6 @@ We will breakdown this project into small tasks as follows:
 * Link to the main repository unsolved:
 ```
 git clone https://github.com/udacity/cd0010-advanced-python-techniques-project-starter.git
-
 ```
 * Link to a reference code solutions: [Near-Earth-Objects](https://github.com/stanleydukor/Near-Earth-Objects.git)
 
